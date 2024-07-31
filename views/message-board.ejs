@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MESSAGE BOARD</h1>
+        <ol>
+            <% messages.map((message) => { %>
+                <li class="message-item">
+                    <h3 class="message-title">Message:</h3>
+                    <ul class="message-details">
+                        <li><strong>Text:</strong> <%= message.text %></li>
+                        <li><strong>User:</strong> <%= message.user %></li>
+                        <li><strong>Date:</strong> <%= message.added %></li>
+                    </ul>
+                </li>
+            <% }) %>
+        </ol>
+    </div>
+</body>
+</html>
