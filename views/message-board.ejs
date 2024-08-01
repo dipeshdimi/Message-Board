@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Board</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./message-board.css">
 </head>
 <body>
     <div class="container">
         <h1>MESSAGE BOARD</h1>
-        <ol>
+        <div>
             <% messages.map((message) => { %>
-                <li class="message-item">
+                <div class="message-item">
                     <h3 class="message-title">Message:</h3>
                     <ul class="message-details">
                         <li><strong>Text:</strong> <%= message.text %></li>
                         <li><strong>User:</strong> <%= message.user %></li>
                         <li><strong>Date:</strong> <%= message.added %></li>
                     </ul>
-                </li>
+                    <a class="navigate" href="/message-details?id=<%=message.user + '_' + message.added.toUTCString()%>">Open Message</a>
+                </div>
             <% }) %>
-        </ol>
+            </div>
+        <a class="new" href="/new" target="_self">Add New Message</a>
     </div>
 </body>
 </html>

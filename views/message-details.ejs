@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Details</title>
+    <link rel="stylesheet" href="./message-board.css">
+</head>
+
+<body>
+    <h3 class="message-title">Message:</h3>
+    <ul class="message-details">
+        <li><strong>Text: </strong><%= activeMessage.text %></li>
+        <li><strong>User: </strong><%= activeMessage.user %></li>
+        <li><strong>Date: </strong><%= activeMessage.added %></li>
+        <a class="navigate" href="../%>">Close Message</a>
+    </ul>
+</body>
+
+</html>

@@ -3,8 +3,9 @@ const passMessagesMiddleware = (myMessages) => {
         try {
             res.locals.messages = myMessages;
             next();
-        } catch {
-            console.log('Pass Messages Middleware');
+        } catch(err) {
+            res.send("Couldn't share the default message array with res.locals!");
+            console.log('Error in Pass Messages Middleware: ', err);
         }
     };
 }
