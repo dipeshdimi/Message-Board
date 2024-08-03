@@ -9,7 +9,8 @@ const getMessages = (req, res) => {
 
 const getMessageDetails = (req, res) => {
     try {
-        const activeMessage = res.locals.messages.find(msg => msg.user + '_' + msg.added.toUTCString() === req.query.id);
+        let activeMessage = res.locals.messages.find(msg => msg.user + '_' + msg.added.toUTCString() === req.query.id);
+        activeMessage = activeMessage ? activeMessage : "Text Not Found!";
         res.render("message-details", {activeMessage: activeMessage});
     } catch(err) {
         res.send("There was issue in fetching the message details!");
